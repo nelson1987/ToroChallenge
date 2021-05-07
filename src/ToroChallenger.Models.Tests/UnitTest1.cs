@@ -1,6 +1,6 @@
 using NUnit.Framework;
 
-namespace Torotracker.Models.Tests
+namespace ToroChallenge.Models.Tests
 {
     public class Tests
     {
