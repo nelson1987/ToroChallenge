@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31019.35
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToroChallenge.Models.Tests", "ToroChallenger.Models.Tests\ToroChallenge.Models.Tests.csproj", "{03C6E8DF-E816-49A1-AD84-990CBE2BDA15}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToroChallenge.Models.Tests", "ToroChallenge.Models.Tests\ToroChallenge.Models.Tests.csproj", "{03C6E8DF-E816-49A1-AD84-990CBE2BDA15}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToroChallenge.Api", "ToroChallenge.Api\ToroChallenge.Api.csproj", "{FB8FC872-D5D3-4DC6-AD01-7500BDDE6225}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{03C6E8DF-E816-49A1-AD84-990CBE2BDA15}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03C6E8DF-E816-49A1-AD84-990CBE2BDA15}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03C6E8DF-E816-49A1-AD84-990CBE2BDA15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB8FC872-D5D3-4DC6-AD01-7500BDDE6225}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB8FC872-D5D3-4DC6-AD01-7500BDDE6225}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB8FC872-D5D3-4DC6-AD01-7500BDDE6225}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB8FC872-D5D3-4DC6-AD01-7500BDDE6225}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

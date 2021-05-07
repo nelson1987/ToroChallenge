@@ -35,3 +35,4 @@
 *.vs
 \bin
 \obj
+/src/ToroChallenge.Api/Properties
