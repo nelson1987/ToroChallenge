@@ -14,5 +14,10 @@ namespace ToroChallenge.Models.Tests
         {
             Assert.Pass();
         }
+        [Test]
+        public void TestComErro()
+        {
+            Assert.Fail();
+        }
     }
 }
