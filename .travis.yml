@@ -4,14 +4,14 @@ mono: none
 
 dotnet: 2.2
 
-solution: "./ToroChallenge.sln"
+solution: "./src/ToroChallenge.sln"
 
 install:
 - dotnet restore
 
 script:
 - dotnet build
-- dotnet test ./ToroChallenge.Domain.Tests/Desafio.Domain.Tests.csproj
+- dotnet test ./src/ToroChallenge.Domain.Tests/Desafio.Domain.Tests.csproj
 - dotnet dev-certs https
 # - dotnet run  --project ./ToroChallenge.Api/Desafio.Api.csproj
 service:
