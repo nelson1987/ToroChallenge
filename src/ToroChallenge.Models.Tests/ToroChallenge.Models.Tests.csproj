@@ -11,9 +11,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="CompraAcaoTest.cs" />
+    <Compile Remove="UnitTest1 - Cópia.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="NUnit" Version="3.13.2" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.17.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ToroChallenge.Domain\ToroChallenge.Domain.csproj" />
   </ItemGroup>
 
 </Project>

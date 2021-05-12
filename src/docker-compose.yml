@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+  toro.userinterface:
+    image: ${DOCKER_REGISTRY-}torouserinterface
+    build:
+      context: .
+      dockerfile: DockerfileUserInterface
+    ports:
+      - "51217:80"
+      - "44349:443"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://localhost;http://localhost
+      - ASPNETCORE_HTTPS_PORT=44349
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets/:/root/.microsoft/usersecrets
+      # - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https/  

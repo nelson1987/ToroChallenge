@@ -1,0 +1,75 @@
+<h1 id="tableLabel">Weather forecast</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<p *ngIf="!investimentos"><em>Loading...</em></p>
+<style>
+  div.lstPapel > div.lstDetalhePapel:nth-of-type(odd) {
+    background-color: darkgrey;
+  }
+  div.lstPapel > div.lstDetalhePapel:nth-of-type(even) {
+    background-color: rgba(0,0,0,0.85);
+  }
+  .lstDetalhePapel {
+    color: lightgray;
+  }
+</style>
+<div class="lstPapel">
+  <div class="row" *ngIf="investimentos">
+    <div class="col-4">Papel</div>
+    <div class="col-4">Compra</div>
+    <div class="col-4">Venda</div>
+  </div>
+  <div class="row lstDetalhePapel" *ngFor="let forecast of investimentos">
+    <div class="col-12 col-offset-8" style="font-weight:bold;">{{ forecast.nome }}</div>
+    <div class="col-4">Bradesco</div>
+    <div class="col-4">R$ 20,88</div>
+    <div class="col-4">R$ 21,03</div>
+    <div class="col-4 col-offset-8" style="color:green; font-weight:bold;">+0,63%</div>
+  </div>
+</div>
+<!--<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="investimentos">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Valor</th>
+      <th>Em Carteira</th>
+      <th>Temp. (F)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let forecast of investimentos">
+      <td><input type="hidden" value="{{ forecast.id }}" />{{ forecast.nome }}</td>
+      <td>{{ forecast.valor }}</td>
+      <td>{{ forecast.urlVender }}</td>
+      <td><input type="text" name="qtdCompra" /></td>
+    </tr>
+  </tbody>
+</table>-->
+<!--
+<h1 id="tableLabel">Weather forecast</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<p *ngIf="!forecasts"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="investimentos">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Valor</th>
+      <th>Temp. (F)</th>
+    </tr>
+  </thead>
+<tbody>
+  <tr *ngFor="let forecast of investimentos">
+    <td><input type="text" value="{{ forecast.id }}" />{{ forecast.nome }}</td>
+    <td>{{ forecast.valor }}</td>
+    <td><input type="text" name="qtdCompra" /></td>
+    <td>{{ forecast.urlVender }}</td>
+    <td><button (click)="Comprar(forecast.id, angular.element('qtdCompra').val())">Save</button></td>
+  </tr>
+</tbody>
+</table>
+
+-->

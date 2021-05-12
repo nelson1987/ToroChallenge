@@ -1,0 +1,14 @@
+# Listar images
+docker images
+# Criar container com imagem
+docker container run [NOME_IMAGEM]
+# exibir containers em processamento
+docker container ps
+# exibir containers iniciado mas não em processamento
+docker container ps -a
+#baixar imagem de dockerhub
+docker container pull [NOME_IMAGEM]
+# executar comando dentro da imagem
+docker container run [NOME_IMAGEM] [COMANDO]
+#execucao iterativa
+docker container run -it [NOME_IMAGEM] 

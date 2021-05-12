@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ToroChallenge.Api.Contracts\ToroChallenge.Api.Contracts.csproj" />
+    <ProjectReference Include="..\ToroChallenge.Domain\ToroChallenge.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

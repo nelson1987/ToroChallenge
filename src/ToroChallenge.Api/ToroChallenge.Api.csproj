@@ -2,13 +2,20 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <UserSecretsId>ed508d3e-1879-4598-9eb4-bd4b57339de5</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR" Version="9.0.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Dominio\ToroChallenge.Domain\ToroChallenge.Domain.csproj" />
+    <ProjectReference Include="..\Dominio\ToroChallenge.PapelContexto.Domain\ToroChallenge.PapelContexto.Domain.csproj" />
+    <ProjectReference Include="..\Dominio\ToroChallenge.TransferenciaContexto.Domain\ToroChallenge.TransferenciaContexto.Domain.csproj" />
+  </ItemGroup>
+
 
 </Project>

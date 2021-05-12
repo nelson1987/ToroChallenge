@@ -1,39 +1,59 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
+using ToroChallenge.PapelContexto.Domain.Commands.Requests;
+using ToroChallenge.PapelContexto.Domain.Queries.Requests;
+using ToroChallenge.TransferenciaContexto.Domain.Commands.Requests;
 
 namespace ToroChallenge.Api.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api")]
+    [Produces("application/json")]
     public class WeatherForecastController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
+        //private static readonly string[] Summaries = new[]
+        //{
+        //    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+        //};
 
-        private readonly ILogger<WeatherForecastController> _logger;
+        //private readonly ILogger<WeatherForecastController> _logger;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
-        {
-            _logger = logger;
-        }
+        //public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        //{
+        //    _logger = logger;
+        //}
 
         [HttpGet]
-        public IEnumerable<WeatherForecast> Get()
+        [Route("List")]
+        public IActionResult ListarMaisNegociados(
+                  [FromServices] IMediator handler,
+                  [FromBody] BuscaAtivosNegociadosRequest command
+              )
         {
-            var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
-            })
-            .ToArray();
+            var response = handler.Send(command);
+            return Ok(response);
+        }
+
+        [HttpPost]
+        [Route("Start")]
+        public IActionResult SubmeterOrdem(
+                  [FromServices] IMediator handler,
+                  [FromBody] SubmeteOrdemRequest command
+       )
+        {
+            var result = handler.Send(command);
+            return Ok(result);
+        }
+
+        [HttpPost]
+        [Route("Get")]
+        public IActionResult ReceberTransferencia(
+           [FromServices] IMediator handler,
+           [FromQuery] RecebeTransferenciaRequest command
+       )
+        {
+            var result = handler.Send(command);
+            return Ok(result);
         }
     }
 }
