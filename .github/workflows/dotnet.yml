@@ -9,7 +9,8 @@ on:
 jobs:
   build:
     env:
-      CAMINHO_PROJETO_TESTES: ./src/ToroChallenge.Models.Tests/ToroChallenge.Models.Tests.csproj
+      CAMINHO_PROJETO_TESTES_PAPEL: ./src/Dominio/ToroChallenge.PapelContexto.Domain.Tests/ToroChallenge.PapelContexto.Domain.Tests.csproj
+      CAMINHO_PROJETO_TESTES_TRANSFERENCIA: ./src/Dominio/ToroChallenge.PapelTransferencia.Domain.Tests/ToroChallenge.PapelTransferencia.Domain.Tests.csproj
       CAMINHO_PROJETO_WEBAPI: ./src/ToroChallenge.Api
     runs-on: ubuntu-latest
 
@@ -20,8 +21,11 @@ jobs:
       with:
         dotnet-version: 5.0.x
         
-    - name: Executar testes
-      run: dotnet test ${{env.CAMINHO_PROJETO_TESTES}} --verbosity minimal
+    - name: Executar testes Papel
+      run: dotnet test ${{env.CAMINHO_PROJETO_TESTES_PAPEL}} --verbosity minimal
+      
+    - name: Executar testes Transferencia
+      run: dotnet test ${{env.CAMINHO_PROJETO_TESTES_TRANSFERENCIA}} --verbosity minimal
     
     - name: Executar build Api
       run: dotnet build  ${{env.CAMINHO_PROJETO_WEBAPI}} --configuration Release 
