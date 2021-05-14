@@ -1,6 +1,7 @@
 using Moq;
 using NUnit.Framework;
 using System.Collections.Generic;
+using System.Threading;
 using ToroChallenge.Domain.Entities;
 using ToroChallenge.Domain.Enums;
 using ToroChallenge.TransferenciaContexto.Domain.Commands.Requests;
@@ -44,8 +45,9 @@ namespace ToroChallenge.TransferenciaContexto.Domain.Tests
 
             //Serviço para realizar o recebimento
             RecebeTransferenciaHandler manipulador = new RecebeTransferenciaHandler(_mockRepository.Object);
+            var token = new CancellationToken();
             //Realizar o recebimento
-            manipulador.Handle(_recebeTransferencia);
+            manipulador.Handle(_recebeTransferencia, token);
 
             Assert.AreEqual(contaCorrente.SaldoDisponivel, 1010.00);
         }
