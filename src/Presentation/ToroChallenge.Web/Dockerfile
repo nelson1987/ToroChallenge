@@ -1,14 +1,22 @@
-# Estagio 1 - Será responsavel em construir nossa aplicação
-FROM node:9.11.2-slim as node
-WORKDIR /app
-COPY package.json /app/
-RUN npm i npm@latest -g
-RUN npm install
-COPY ./ /app/
-ARG env=prod
-RUN npm run build
+#See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
 
-# Estagio 2 - Será responsavel por expor a aplicação
-FROM nginx:1.13
-COPY --from=node /app/dist/meu-projeto /usr/share/nginx/html
-COPY ./nginx-custom.conf /etc/nginx/conf.d/default.conf
+FROM mcr.microsoft.com/dotnet/aspnet:5.0-buster-slim AS base
+WORKDIR /app
+EXPOSE 80
+#EXPOSE 443
+
+FROM mcr.microsoft.com/dotnet/sdk:5.0-buster-slim AS build
+WORKDIR /src
+COPY ["Presentation/ToroChallenge.Web/ToroChallenge.Web.csproj", "Presentation/ToroChallenge.Web/"]
+RUN dotnet restore "Presentation/ToroChallenge.Web/ToroChallenge.Web.csproj"
+COPY . .
+WORKDIR "/src/Presentation/ToroChallenge.Web"
+RUN dotnet build "ToroChallenge.Web.csproj" -c Release -o /app/build
+
+FROM build AS publish
+RUN dotnet publish "ToroChallenge.Web.csproj" -c Release -o /app/publish
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "ToroChallenge.Web.dll"]

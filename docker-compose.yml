@@ -1,13 +1,87 @@
-version: '3.4'
+version: '3'
+
 services:
-  api:
-    build:
-      context: .
+  mongo-express:
+    container_name: mongoexpress
+    image: mongo-express
     ports:
-      - "20000:80"
+      - 8081:8081
+    environment:
+      ME_CONFIG_BASICAUTH_USERNAME: nelsonneto
+      ME_CONFIG_BASICAUTH_PASSWORD: MongoExpress2019!
+      ME_CONFIG_MONGODB_PORT: 27017
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: MongoDB2019!
     networks:
-      - marvel-network
+      - mongo-compose-network
+    depends_on: 
+      - mongo
+
+  mongo:
+    container_name: mongodb
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: MongoDB2019!
+    ports:
+      - "27017:27017"
+    volumes:
+      - /C/Projeto/ToroChallenge/src/db/mongodb:/data/db
+    networks:
+      - mongo-compose-network
+
+  mysqlsrv:
+    container_name: mysql
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: "MySql2019!"
+      MYSQL_DATABASE: "torodb"
+      MYSQL_USER: "torosys"
+      MYSQL_PASSWORD: "torosys"
+    ports:
+      - "3306:3306"
+    volumes:
+      - /C/Projeto/ToroChallenge/src/db/mysql:/var/lib/mysql
+    networks:
+      - mysql-compose-network
+
+  adminer:
+    container_name: adminer
+    image: adminer
+    ports:
+      - 8090:8080
+    networks:
+      - mysql-compose-network
+
+  basketdata:
+    image: redis
+    expose:
+      - "6379"
+
+  torochallengewebapi:
+    volumes:
+        - 'C:\Users\NELSON\vsdbg\vs2017u5:/remote_debugger:rw'
+        - 'C:\Projeto\ToroChallenge\src\ToroChallenge.WebApi:/app'
+        - 'C:\Projeto\ToroChallenge\src:/src/'
+        - 'C:\Users\NELSON\.nuget\packages\:/root/.nuget/fallbackpackages2'
+        - 'C:\Program Files\dotnet\sdk\NuGetFallbackFolder:/root/.nuget/fallbackpackages'
+    environment:
+        - DOTNET_USE_POLLING_FILE_WATCHER=1
+        - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
+        - ASPNETCORE_ENVIRONMENT=Development
+        - NUGET_PACKAGES=/root/.nuget/fallbackpackages2
+        - NUGET_FALLBACK_PACKAGES=/root/.nuget/fallbackpackages;/root/.nuget/fallbackpackages2
+    container_name: ToroChallenge.WebApi
+    entrypoint:
+        - tail
+    image: 'torochallengewebapi:dev'
+    networks:
+      - mysql-compose-network
+      ports:
+        - 50000:80
 
 networks: 
-    marvel-network:
-        driver: bridge
+  mongo-compose-network:
+    driver: bridge
+  mysql-compose-network:
+    driver: bridge

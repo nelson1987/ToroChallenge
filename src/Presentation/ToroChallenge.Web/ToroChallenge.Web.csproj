@@ -10,17 +10,30 @@
 
     <!-- Set this to true if you enable server-side prerendering -->
     <BuildServerSideRenderer>false</BuildServerSideRenderer>
+    <UserSecretsId>fedb381f-4e56-468c-aa17-32ac3304f8f4</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..</DockerfileContext>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="5.0.4" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
   </ItemGroup>
 
   <ItemGroup>
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
+    <Compile Remove="ClientApp\src\app\fetch-data\**" />
     <Content Remove="$(SpaRoot)**" />
+    <Content Remove="ClientApp\src\app\fetch-data\**" />
+    <EmbeddedResource Remove="ClientApp\src\app\fetch-data\**" />
     <None Remove="$(SpaRoot)**" />
+    <None Remove="ClientApp\src\app\fetch-data\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="ClientApp\src\app\fetch-data\fetch-data.component.html" />
+    <None Remove="ClientApp\src\app\fetch-data\fetch-data.component.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

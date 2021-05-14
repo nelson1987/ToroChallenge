@@ -13,21 +13,27 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToroChallenge.Domain", "Dom
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PapelContexto", "PapelContexto", "{8778EE83-10C1-4E51-BAF1-1B9359794BA8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToroChallenge.TransferenciaContexto.Domain.Tests", "Dominio\ToroChallenge.TransferenciaContexto.Domain.Tests\ToroChallenge.TransferenciaContexto.Domain.Tests.csproj", "{D42B5366-B67D-413B-9FA7-B306EFB20289}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToroChallenge.TransferenciaContexto.Domain.Tests", "Dominio\ToroChallenge.TransferenciaContexto.Domain.Tests\ToroChallenge.TransferenciaContexto.Domain.Tests.csproj", "{D42B5366-B67D-413B-9FA7-B306EFB20289}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToroChallenge.PapelContexto.Domain.Tests", "Dominio\ToroChallenge.PapelContexto.Domain.Tests\ToroChallenge.PapelContexto.Domain.Tests.csproj", "{D687E549-6700-4F81-BA08-54E3B983BBCD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToroChallenge.PapelContexto.Domain.Tests", "Dominio\ToroChallenge.PapelContexto.Domain.Tests\ToroChallenge.PapelContexto.Domain.Tests.csproj", "{D687E549-6700-4F81-BA08-54E3B983BBCD}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToroChallenge.PapelContexto.Domain", "Dominio\ToroChallenge.PapelContexto.Domain\ToroChallenge.PapelContexto.Domain.csproj", "{B560E093-E409-4875-889F-BA90C6CAA9FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToroChallenge.ApplicationServices", "ToroChallenge.ApplicationServices\ToroChallenge.ApplicationServices.csproj", "{02E30B13-EB01-4041-94DB-CF77B9BEF8EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToroChallenge.ApplicationServices", "ToroChallenge.ApplicationServices\ToroChallenge.ApplicationServices.csproj", "{02E30B13-EB01-4041-94DB-CF77B9BEF8EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToroChallenge.ApplicationServices.Contracts", "ToroChallenge.ApplicationServices.Contracts\ToroChallenge.ApplicationServices.Contracts.csproj", "{61B1FD01-D8F8-4C8F-A3B4-125080434374}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToroChallenge.ApplicationServices.Contracts", "ToroChallenge.ApplicationServices.Contracts\ToroChallenge.ApplicationServices.Contracts.csproj", "{61B1FD01-D8F8-4C8F-A3B4-125080434374}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToroChallenge.WebApi", "ToroChallenge.WebApi\ToroChallenge.WebApi.csproj", "{CBB8D2E7-1907-42B3-AFC6-2D88D458AF54}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToroChallenge.WebApi", "ToroChallenge.WebApi\ToroChallenge.WebApi.csproj", "{CBB8D2E7-1907-42B3-AFC6-2D88D458AF54}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1_Data", "1_Data", "{4DD60D39-8226-4FC3-BA80-CD9734C50490}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToroChallenge.Data", "ToroChallenge.Data\ToroChallenge.Data.csproj", "{2B9C66A6-FC02-42CB-B326-53E0302FC214}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToroChallenge.Data", "ToroChallenge.Data\ToroChallenge.Data.csproj", "{2B9C66A6-FC02-42CB-B326-53E0302FC214}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{99DA6765-1635-411D-B722-8CB48DAE222F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToroChallenge.Web", "Presentation\ToroChallenge.Web\ToroChallenge.Web.csproj", "{8B1EFA32-DB95-4EE7-81E0-7778E9706C30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToroChallenge.WebApp", "ToroChallenge.WebApp\ToroChallenge.WebApp.csproj", "{57A57F84-4D0B-4D82-B3EF-B368BB37174D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,6 +77,14 @@ Global
 		{2B9C66A6-FC02-42CB-B326-53E0302FC214}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B9C66A6-FC02-42CB-B326-53E0302FC214}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B9C66A6-FC02-42CB-B326-53E0302FC214}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B1EFA32-DB95-4EE7-81E0-7778E9706C30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B1EFA32-DB95-4EE7-81E0-7778E9706C30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B1EFA32-DB95-4EE7-81E0-7778E9706C30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B1EFA32-DB95-4EE7-81E0-7778E9706C30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57A57F84-4D0B-4D82-B3EF-B368BB37174D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57A57F84-4D0B-4D82-B3EF-B368BB37174D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57A57F84-4D0B-4D82-B3EF-B368BB37174D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57A57F84-4D0B-4D82-B3EF-B368BB37174D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -84,6 +98,8 @@ Global
 		{D687E549-6700-4F81-BA08-54E3B983BBCD} = {8778EE83-10C1-4E51-BAF1-1B9359794BA8}
 		{B560E093-E409-4875-889F-BA90C6CAA9FB} = {8778EE83-10C1-4E51-BAF1-1B9359794BA8}
 		{2B9C66A6-FC02-42CB-B326-53E0302FC214} = {4DD60D39-8226-4FC3-BA80-CD9734C50490}
+		{8B1EFA32-DB95-4EE7-81E0-7778E9706C30} = {99DA6765-1635-411D-B722-8CB48DAE222F}
+		{57A57F84-4D0B-4D82-B3EF-B368BB37174D} = {99DA6765-1635-411D-B722-8CB48DAE222F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E7B284E3-34D3-4D38-BB14-A4399090B16C}

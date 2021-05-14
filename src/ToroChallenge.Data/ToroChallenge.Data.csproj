@@ -1,11 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.90" />
+    <PackageReference Include="MySql.Data" Version="8.0.25" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Dominio\ToroChallenge.PapelContexto.Domain\ToroChallenge.PapelContexto.Domain.csproj" />
+    <ProjectReference Include="..\Dominio\ToroChallenge.TransferenciaContexto.Domain\ToroChallenge.TransferenciaContexto.Domain.csproj" />
   </ItemGroup>
 
 </Project>
