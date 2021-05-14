@@ -2,7 +2,7 @@ language: csharp
 
 mono: none
 
-dotnet: 2.2
+dotnet: 5.0
 
 solution: "./src/ToroChallenge.sln"
 
@@ -11,9 +11,9 @@ install:
 
 script:
 - dotnet build
-- dotnet test ./src/ToroChallenge.Domain.Tests/Desafio.Domain.Tests.csproj
-- dotnet dev-certs https
-# - dotnet run  --project ./ToroChallenge.Api/Desafio.Api.csproj
+- dotnet test ./src/Dominio/ToroChallenge.TransferenciaContexto.Domain.Tests/ToroChallenge.TransferenciaContexto.Domain.Tests.csproj
+- dotnet test ./src/Dominio/ToroChallenge.PapelContexto.Domain.Tests/ToroChallenge.PapelContexto.Domain.Tests.csproj
+- dotnet run  --project ./src/ToroChallenge.WebApi/ToroChallenge.WebApi.csproj
 service:
 - docker
 
