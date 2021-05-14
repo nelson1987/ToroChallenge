@@ -13,7 +13,7 @@ script:
 - dotnet build
 - dotnet test ./src/Dominio/ToroChallenge.TransferenciaContexto.Domain.Tests/ToroChallenge.TransferenciaContexto.Domain.Tests.csproj
 - dotnet test ./src/Dominio/ToroChallenge.PapelContexto.Domain.Tests/ToroChallenge.PapelContexto.Domain.Tests.csproj
-- dotnet run  --project ./src/ToroChallenge.WebApi/ToroChallenge.WebApi.csproj
+#- dotnet run  --project ./src/ToroChallenge.WebApi/ToroChallenge.WebApi.csproj --Comentado pois se der run no travis, trava o build
 service:
 - docker
 
